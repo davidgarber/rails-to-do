@@ -6,12 +6,10 @@ class ListsController < ApplicationController
 
   def show
     @list = List.find(params[:id])
-    render :show
   end
 
   def new
     @list = List.new
-    render :new
   end
 
   def create
@@ -21,6 +19,11 @@ class ListsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def edit
+    @list = List.find(params[:id])
+    render :edit
   end
 
   private
